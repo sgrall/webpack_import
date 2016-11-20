@@ -49,15 +49,47 @@
 
 /***/ },
 /* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _averageService = __webpack_require__(2);
+
+	var stats = _interopRequireWildcard(_averageService);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	var scores = [90, 75, 60, 99, 94, 30];
+	var averageScore = stats.getAvg(scores);
+	var sumScore = stats.getSum(scores);
+	var messageToDisplayAvg = "average score " + averageScore;
+	var messageToDisplaySum = "sum score " + sumScore;
+
+	document.write(messageToDisplayAvg);
+	document.write(messageToDisplaySum);
+
+/***/ },
+/* 2 */
 /***/ function(module, exports) {
 
 	"use strict";
 
-	// Let's use some ES6 features
-	var averageScore = "90";
-	var messageToDisplay = "average score " + averageScore;
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.getAvg = getAvg;
+	exports.getSum = getSum;
+	function getAvg(score) {
+	  return score.reduce(function (p, c) {
+	    return p + c;
+	  }) / score.length;
+	}
 
-	document.write(messageToDisplay);
+	function getSum(score) {
+	  return score.reduce(function (p, c) {
+	    return p + c;
+	  });
+	}
 
 /***/ }
 /******/ ]);
